@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CSS Zen Garden: The Beauty of CSS Design</title>
+
+    <link rel="stylesheet" media="screen" href="<{$t_dir}>css/170.css">
+    <script type="text/javascript" src="<{$t_dir}>js/jquery-1.4.2.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Dave Shea">
+    <meta name="description" content="A demonstration of what can be accomplished visually through CSS-based design.">
+    <meta name="robots" content="all">
+    <script type="text/javascript" src="<{$t_dir}>js/fun.js"></script>
+    <script language="javascript">
+        var rotate_1 = 5;
+        $(document).ready(function(){
+            $("#left_1").hover(function(){
+                        $("#left_1").animate({width:"13%"},1000);
+                    },
+                    function(){
+                        $("#left_1").animate({width:"5%"},1000);
+                    });
+        });
+
+
+        function sxt(aaa)
+        {
+            if(aaa==1)
+            {
+                $("#hd_1")[0].style.display="block";
+                $("#hd_2")[0].style.display="none";
+                $("#hd_3")[0].style.display="none";
+                $("#li_1")[0].style.background="#deebf7";
+                $("#li_2")[0].style.background="none";
+                $("#li_3")[0].style.background="none";
+            }
+            if(aaa==2)
+            {
+                $("#hd_1")[0].style.display="none";
+                $("#hd_2")[0].style.display="block";
+                $("#hd_3")[0].style.display="none";
+                $("#li_1")[0].style.background="none";
+                $("#li_2")[0].style.background="#deebf7";
+                $("#li_3")[0].style.background="none";
+            }
+            if(aaa==3)
+            {
+                $("#hd_1")[0].style.display="none";
+                $("#hd_2")[0].style.display="none";
+                $("#hd_3")[0].style.display="block";
+                $("#li_1")[0].style.background="none";
+                $("#li_2")[0].style.background="none";
+                $("#li_3")[0].style.background="#deebf7";
+            }
+
+        }
+        function pinglunfb(str)
+        {
+
+            //document.getElementById("send_id").value="32132132";
+            //window.alert($_("send_id").value);
+            if(str!=null)
+            {
+                //window.alert(str);
+                document.getElementById("reply_f_id").value=str;
+            }
+            else{
+                document.getElementById("reply_f_id").value=0;
+            }
+            $("#pinglunfabiaot")[0].style.display="block";
+           // handle();我自己写的异步处理调用的函数。
+
+
+        }
+
+
+    </script>
+</head>
+
+<body id="css-zen-garden">
+<div id="zong_1">
+    <div id="left_1">
+        <div class="wrapper1">
+            <ul>
+                <li><a href="index.php" target="_parent"><figure><img src="<{$t_dir}>image/001.png" width="30px"/><figcaption style="margin-top:-10px">首页</figcaption></figure></a></li>
+                <li><a href="note_add.php" target="_parent"><figure><img src="<{$t_dir}>image/001.png" width="30px"/><figcaption style="margin-top:-10px">发帖</figcaption></figure></a></li>
+                <li><a href="resource_main.php" target="_parent"><figure><img src="<{$t_dir}>image/001.png" width="30px"/><figcaption style="margin-top:-10px">资源</figcaption></figure></a></li>
+                <li><a href="#"><figure><img src="<{$t_dir}>image/001.png" width="30px"/><figcaption style="margin-top:-10px">首页</figcaption></figure></a></li>
+                <li><a href="#"><figure><img src="<{$t_dir}>image/001.png" width="30px"/><figcaption style="margin-top:-10px">首页</figcaption></figure></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="page-wrapper" id="page-wrapper1">
+        <section class="intro" id="zen-intro">
+
+            <div class="summary" id="zen-summary" role="article">
+                <p>版权声明：本文为博主原创文章，未经博主允许不得转载。</p>
+            </div>
+
+            <div class="preamble" id="zen-preamble" role="article">
+                <h3><{$note_title}></h3>
+                <div id="preamble_1" style="padding-left:20px;">
+                    <span style="float:left">标签：<{$note_keyword}></span><span style="float:right">2017-04-15&nbsp;&nbsp;&nbsp;<a href="#pinglunfabiao" onclick="pinglunfb()">评论帖子</a>&nbsp;&nbsp;&nbsp;<a href="note_view_reply_collect.php?nid=<{$note_id}>&&col=true">收藏帖子</a></span>
+                </div>
+                <p>
+						<pre>
+                        <{$note_content}>
+                        </pre>
+                </p>
+            </div>
+
+
+            <div class="preamble" style="padding-top:100px;padding-bottom:100px;">
+                <h3  id="pinglundiezi" >查看评论</h3>
+
+                <{section name=key loop=$reply_list}>
+                <p>
+                <div style="border:1px solid #BDCCA3;" id="<{$reply_list[key].id}>">
+                    <div style="background:#8eb7e2;padding:10px 10px;"><font size="5"><{$reply_list[key].reply_floor}>楼</font>&nbsp;&nbsp;<{$reply_list[key].user_name}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;评论&nbsp;&nbsp;&nbsp;&nbsp;<{$reply_list[key].obj_name}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="float:right;"><{$reply_list[key].note_reply_datetime}>&nbsp;&nbsp;&nbsp;发表&nbsp;&nbsp;&nbsp;<a href="#pinglunfabiao" onclick="pinglunfb('<{$reply_list[key].id}>')">回复</a></span></div>
+                    <div style="padding:15px">
+                        <{$reply_list[key].note_reply_content}>
+                        <{section name=key_son loop=$reply_list[key].child}>
+
+                        <div style="border:1px solid #BDCCA3;margin-top:10px;">
+                            <div style="background:#8eb7e2;padding:10px 10px;">用户：<{$reply_list[key].child[key_son].user_name}>&nbsp;&nbsp;&nbsp;&nbsp;return:&nbsp;&nbsp;<{$reply_list[key].child[key_son].obj_name}>&nbsp;&nbsp;<{$reply_list[key].child[key_son].note_reply_datetime}>发表&nbsp;&nbsp;&nbsp;<a href="#pinglunfabiao" onclick="pinglunfb('<{$reply_list[key].child[key_son].id}>')">回复</a></div>
+                            <div style="padding:10px">
+                                <{$reply_list[key].child[key_son].note_reply_content}>
+
+                                <{section name=key_son_son loop=$reply_list[key].child[key_son].child}>
+
+                                <div style="border:1px solid #BDCCA3;margin-top:10px;">
+                                    <div style="background:#8eb7e2;padding:10px 20px;">用户:<{$reply_list[key].child[key_son].child[key_son_son].user_name}>&nbsp;&nbsp;&nbsp;&nbsp;return:&nbsp;&nbsp;<{$reply_list[key].child[key_son].child[key_son_son].obj_name}>&nbsp;&nbsp;<{$reply_list[key].child[key_son].child[key_son_son].note_reply_datetime}>发表&nbsp;&nbsp;&nbsp;</div>
+                                    <div style="padding:10px">
+                                        <{$reply_list[key].child[key_son].child[key_son_son].note_reply_content}>
+
+                                    </div>
+                                </div>
+                                <{/section}>
+                            </div>
+                        </div>
+                        <{/section}>
+                    </div>
+                </div>
+                </p>
+                <{/section}>
+               <!-- <p>
+                <div style="border:1px solid #BDCCA3;">
+                    <div style="background:#8eb7e2;padding:10px 10px;">2楼&nbsp;&nbsp;1217158716&nbsp;&nbsp;2017-04-15发表&nbsp;&nbsp;&nbsp;<a href="#pinglunfabiao" onclick="pinglunfb()">回复</a></div>
+                    <div style="padding:15px">
+                        楼主我前面几步都按着你来设置的，但到第9步设置附加依赖性时，一直不能显示出你所陈列的lib,并且也不能添加，这是什么原因？
+                        <div style="border:1px solid #BDCCA3;margin-top:10px;">
+                            <div style="background:#8eb7e2;padding:10px 10px;">return:&nbsp;&nbsp;1217158716&nbsp;&nbsp;2017-04-15发表&nbsp;&nbsp;&nbsp;<a href="#pinglunfabiao" onclick="pinglunfb()">回复</a></div>
+                            <div style="padding:10px">
+                                楼主我前面几步都按着你来设置的，但到第9步设置附加依赖性时，一直不能显示出你所陈列的lib,并且也不能添加，这是什么原因？
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </p>-->
+            </div>
+
+
+            <div class="preamble" id="pinglunfabiaot" style="padding-top:100px;display:none">
+                <h3 id="pinglunfabiao">发表评论</h3>
+                <p>
+                <form method="post" action="note_view_reply_collect.php?nid=<{$note_id}>">
+                <table border="0" width="100%" style="padding-left:40px;">
+                    <input type="hidden" value="<{$note_id}>" name="note_id"/>
+                    <input type="hidden" value="<{$replay_id}>" name="reply_id"/>
+                    <input type="hidden" value="0" name="reply_f_id" id="reply_f_id"/>
+                    <!--<input type="button" value="123" onclick="handle()">-->
+                   <!-- <tr style="height:40px">
+                        <th>测试ajax内容：</th>
+                        <td><input type="text" value="" id="my_ajax"></td>
+                    </tr>-->
+                    <tr style="height:40px">
+                        <th>用户名：</th>
+                        <td><{$reply_name}></td>
+                    </tr>
+                    <tr>
+                        <th>评论内容：</th>
+                        <td><textarea rows="15" cols="70" name="reply_content"></textarea></td>
+                    </tr>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <td><input type="submit" value="提交评论" style="padding:7px 20px" name="sub"></td>
+                    </tr>
+                </table>
+                </form>
+                </p>
+                <div style="padding-left:50px;padding-bottom:100px;">
+                    * 以上用户言论只代表其个人观点，不代表本网站的观点或立场。
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+</div>
+
+
+<div id="right_1">
+    <div id="right_1_top">
+        <h3><div style="margin-top:10px;margin-left:20px;margin-bottom:0px"><img src="<{$t_dir}>image/heart.gif" width="13px"><span style="padding-left:10px;font-size:20px;font-family:'华文隶书';">关&nbsp;于&nbsp;博&nbsp;主</span></div></h3>
+        <center><hr color="#3D82AD" width="90%"/></center>
+        <a href="#"><figure align="center"><img src="<{$t_dir}><{$user_pic}>" style="margin-top:10px" width="230" height="230"/><figcaption style="margin-top:-8px;font-size:20px;font-family:'华文隶书';color:#2C5079"><{$user_name}></figcaption></figure></a>
+        <p>博&nbsp;&nbsp;主：<{$user_name}></p>
+        <p style="white-space:normal;line-height:20px">简&nbsp;&nbsp;介：<{$user_explain}></p>
+        <center><a href="message_send.php#xiesixin"><img src="<{$t_dir}>image/btn_sendletter.gif" style="margin-top:10px"/></a></center>
+        <center style="margin-top:10px"><hr  width="90%" style="border:1px dashed;"/></center>
+        <table border="0" id="Blogger_1">
+            <tr vertical-align="center"><td>访&nbsp;&nbsp;问：</td> <td><{$click_num}>次</td></tr>
+            <tr><td>积&nbsp;&nbsp;分：</td> <td><{$user_his_inter}></td></tr>
+            <tr><td>等&nbsp;&nbsp;级：</td> <td><img src="<{$t_dir}>image/blog8.png"/></td></tr>
+            <tr><td>排&nbsp;&nbsp;名：</td> <td>第<{$user_ranking}>名</td></tr>
+        </table>
+    </div>
+</div>
+
+<div id="right_2">
+    <div id="right_2_top">
+        <div class="lanmubox">
+            <div class="hd">
+                <ul><li id="li_1" onmouseover="sxt('1')" style="background:#deebf7">精心推荐</li><li id="li_2" onmouseover="sxt('2')">最新文章</li><li id="li_3" onmouseover="sxt('3')">随机文章</li></ul>
+            </div>
+            <div class="bd">
+                <ul id="hd_1" style="display:block">
+                    <{section name=key loop=$recommend_arr}>
+                    <li><a href="note_view.php?nid=<{$recommend_arr[key].id}>"><{$recommend_arr[key].title}></a></li>
+                    <{/section}>
+                </ul>
+                <ul id="hd_2" style="display:none">
+                    <{section name=key loop=$new_arr}>
+                    <li><a href="note_view.php?nid=<{$new_arr[key].id}>"><{$new_arr[key].title}></a></li>
+                    <{/section}>
+                </ul>
+                <ul id="hd_3" style="display:none">
+                    <{section name=key loop=$rand_arr}>
+                    <li><a href="note_view.php?nid=<{$rand_arr[key].id}>"><{$rand_arr[key].title}></a></li>
+                    <{/section}>
+                </ul>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="right_3">
+    <div id="right_3_top">
+        <h3><div style="margin-top:10px;margin-left:20px;margin-bottom:0px"><img src="<{$t_dir}>image/heart.gif" width="13px"><span style="padding-left:10px;font-size:20px;font-family:'华文隶书';">友&nbsp;情&nbsp;连&nbsp;接</span></div></h3>
+        <center><hr color="#3D82AD" width="90%"/></center>
+        <p>1.<a href="#">沈康的博客</a></p>
+        <p>2.<a href="#">小明的博客</a></p>
+        <p>3.<a href="#">董佳俊的博客</a></p>
+    </div>
+</div>
+
+</body>
+</html>

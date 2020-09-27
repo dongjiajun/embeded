@@ -1,0 +1,126 @@
+
+
+* {margin: 0; padding: 0}
+
+body {
+	background:#3C6FAC url(../image/back.gif) repeat-x;
+	font-size:100.01%;
+	font-family:"trebuchet ms", verdana, sans-serif;
+	color:#2C5079
+}
+
+
+li{list-style:none;}
+a{text-decoration:none;cursor:pointer;}
+a:link{color:#E5FBBB}
+a:visited{color:#B8DBFF}
+a:hover, a:active{color:white}
+
+#resource_top_1{
+	height:40px;
+	width:100%;
+	background:#5eaff9;
+}
+
+#resource_zong{
+	width:85%;
+	background: #79A6D4;
+	height:100%;
+	margin:0px auto;
+	padding-bottom:100px;
+}
+#resource_zong_1{
+	clear:both;
+	padding-top:40px;
+}
+#resource_zong_1 ul{background:#094dbe;height:21px;padding-top:10px;padding-bottom:10px;}
+#resource_zong_1 li{display:inline;padding:10px;padding-left:20px;margin:-2.5px;padding-right:20px;font-size:18px;color:white;font-weight:bold;}
+#resource_zong_1 #resource_zong_li_1{margin-left:0px;}
+#resource_zong_1 li:hover{background:#7c9acc;color:#bfd5f3;}
+
+#resource_zong_2{float:left;border:1px solid #3D82AD;margin-bottom:20px;}
+#resource_zong_2 li{list-style-type:none;display:block;padding:16px;padding-left:30px;padding-right:35px;font-size:18px;color:white;font-weight:bold;}
+#resource_zong_2 li:hover{background:#d4dfe8;color:#6d5861;}
+
+#resource_zong_3 #resource_zong_3_1 li{padding:8px;color:#d3e4f4;}
+#resource_zong_3 #resource_zong_3_2 li{padding:8px;color:#d3e4f4;}
+#resource_zong_3 #resource_zong_3_3 li{padding:8px;color:#d3e4f4;}
+#resource_zong_4{float:right;font-family:'华文楷体';font-weight:bold;}
+
+#resource_zong_4_1 li{list-style-type:none;display:inline;}
+
+#resource_zong_4_2{
+	margin-right:10px;
+	margin-top:10px;
+	font-family:'华文新魏';
+	font-weight:normal;
+}
+
+#resource_zong_4_2 #right_2_top
+{
+	background:#96bde0;
+	border:1px solid #3D82AD;
+	width: 300px;
+	white-space: nowrap;
+}
+
+#resource_zong_4_3{
+	margin-right:10px;
+	margin-top:10px;
+	font-family:'华文新魏';
+	font-weight:normal;
+	overflow:hidden;
+}
+
+#resource_zong_4_3 #right_3_top
+{
+	background:#96bde0;
+	border:1px solid #3D82AD;
+	width: 300px;
+	white-space: nowrap;
+}
+
+#resource_zong_5{color:#2C5079}
+#resource_zong_5 a{color:#2C5079}
+
+
+#resource_classsify_zong_2{
+	width:99.9%;
+	border:1px solid #3D82AD;
+	margin-top:30px;
+	padding-top:30px;
+	padding-bottom:30px;
+	color:#dceaf7;
+}
+#resource_classsify_zong_2 td:hover{background:#3d88cb}
+#resource_classsify_zong_3 td{padding-left:20px;padding-top:7px;padding-bottom:7px;font-weight:bold;}
+
+#resource_my_1 td{padding-left:40px;color:white}
+.resource_my_2{
+	margin-top:15px;
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-left:10px;
+	border-left:solid 4px #5192cc;
+	color:white;
+}
+.resource_my_2:hover{
+	color:#094dbe;
+	border-left-color:#094dbe;
+}
+
+.resource_my_3 td{
+	padding:8px;
+}
+.lanmubox .hd{width:100%;height:30px;border-bottom:1px solid #ddd;border-top:1px solid #ddd;}
+.lanmubox .hd ul li{float:left;width:33%;height:30px;line-height:30px;text-align:center; cursor:pointer; font-size:20px;}
+.lanmubox .bd ul li{width:100%;padding-left:15px;height:29px;line-height:29px;}
+.lanmubox .bd ul li:hover{padding-left:35px;transition: all 0.5s;-webkit-transition: all 0.5s; -moz-transition: all 0.5s; -o-transition: all 0.5s;}
+.lanmubox .bd ul li a{color:#444;font-size:16px;}
+.lanmubox .bd ul li a:hover{color:#f00;}
+
+
+
+
+
+
